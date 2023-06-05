@@ -1,15 +1,16 @@
-WIP but the idea is that you would be able to repro my issues in a docker container
+# astronvim-sandbox
 
-build the iamge
+The idea behind this container is to clone your astronvim setup into a container to share reproductions of issues.
 
+You can either pass a github repo `<owner>/<repo>` or a `<owner>/<repo>/<subPath>`
 ```
-make
+docker run -it -rm hacksore/astronvim-sandbox -- -userBranch hacksore/dotfiles/.config/astronvim
 ```
+Now that should start up neovim with your configuration loaded and you can test your issue.
 
-run the repro
+### flags to support
 
-```
-make test
-```
+- `-userBranch <branch>` the branch of the repo to clone
+- `-astroBranch <branch>` the branch of astronvim (default to `stable`)
+- `-i <installstrategy>` the install install strategy either YOLO or stow
 
-Now can `cd ~/dotfiles` then run `nvim .` and have a look at the `test.*` files
