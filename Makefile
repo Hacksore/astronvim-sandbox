@@ -1,4 +1,4 @@
 build:
-	docker build -t astronvim-sandbox .
+	docker build --progress=plain -t astronvim-sandbox .
 test:
 	docker run --rm -it astronvim-sandbox
